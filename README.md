@@ -5,4 +5,4 @@
 - InteliJ 설치: https://www.jetbrains.com/ko-kr/idea/download/
 # 따라해보기
 - "Hello World" 프로그램을 작성해 보자
-- 
+- "GuGuDan"프로그램을 작성해 보자
