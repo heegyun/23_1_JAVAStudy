@@ -1,4 +1,4 @@
-# 21_JAVAStudy: 자바 사관학교
+# 21_자바 사관학교
 - 자바 공부 열심히 합시다.
 # 자바환경설정
 - JDK 설치: https://www.oracle.com/java/technologies/downloads/
