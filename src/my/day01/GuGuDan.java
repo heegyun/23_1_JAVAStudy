@@ -1,3 +1,5 @@
+package my.day01;
+
 public class GuGuDan {
 
     public void dan(int n) {
