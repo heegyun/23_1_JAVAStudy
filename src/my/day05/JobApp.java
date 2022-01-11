@@ -1,11 +1,15 @@
 package my.day05;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
  구직 등록 프로그램...
  */
 public class JobApp {
+
+    // ArrayList 객체 생성
+    static ArrayList<Person> personList = new ArrayList<Person>();
 
     public void showMenu(){
         System.out.println("******JOB v1.0******");
@@ -44,10 +48,21 @@ public class JobApp {
 
         //사람 객체 생성
         Person person1 = new Person(nm,age,gen,tel);
-        String info = person1.showProfile();
-        System.out.println(info);
-
+       // ArrayList에 사람 객체 추가
+        personList.add(person1);
+        /////////////////////////////////////////
+       // String info = person1.showProfile();
+       // System.out.println(info);
+       ///////////////////////////////////////////
+        person1.wantJob("프로그래머",3000);
+       ///////////////////////////////////////////
     }
+
+    public void showPersonList(){
+        for (Person p : personList)
+            System.out.println(p.showProfile());
+    }
+
 
     public static void main(String[] args) {
         JobApp jobApp = new JobApp();
@@ -60,10 +75,11 @@ public class JobApp {
                 System.exit(0); //프로그램 정상종료
             } else if (menuNo == 1) { // 1. 구직등록 (직장을 구하는 사람의 인적정보를 입력 받는다.)
                 JobApp.inputPerson(); // 인적 정보를 입력받는 모듈
+            } else if(menuNo ==  3){ // 3. 구직자 정보 출력
+                jobApp.showPersonList();
             }
 
         }
-
 
     }
 }
