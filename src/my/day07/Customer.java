@@ -29,9 +29,19 @@ public class Customer {
 
 
     public Customer(){
+
+    }
+
+    // 인자 생성자..
+    public Customer(int id,String name){
+        customerID = id;
+        customerName = name;
         customerGrade = "SILVER";
         bonusRatio = 0.01;
+        System.out.println("부모생성자 입니다.");
     }
+
+
     public int calcPrice(int price){ // 보너스 포인트 계산
         bonusPoint += price*bonusRatio;
         return bonusPoint;

@@ -1,0 +1,181 @@
+*자바에서 상속을 받을 때는 extends 란 키워드를 사용한다.
+  자바는 단일 상속 개념이므로 extends 로 상속 받을 수 있는 클래스는 단 하나뿐이다.
+1. 오버라이딩(Overriding)
+ - 상속 개념과 맞물려 사용
+ - 부모로부터 상속 받은 메소드를 재정의해서 사용하는 것 : 재정의
+********오버라이딩 조건******************
+- 오버라이드 하려는 메소드가 부모 클래스	에 존재해야 한다.
+- 메소드 이름이 동일해야 한다.
+- 메소드의 매개변수 갯수, 데이터타입이 같아야 한다.
+- 메소드의 반환타입도 같아야 한다.
+- 메소드의 접근 지정자는 부모클래스와 동일하거나, 접근 범위가 넓어야 한다.
+- Exception의 경우 부모 클래스의 메소드와 동일하거나 더 구체적인 Exception을 발생시켜야 한다.
+
+※ super 의 사용*****************************
+1) super.변수 : 부모클래스로부터 물려받은 변수
+2) super.메소드: 메소드
+3) super() : 부모클래스의 생성자
+-super()역시 생성자 안에서만 호출 가능하며, 생성자의 맨 첫줄에 위치해야 한다.
+super 라는 키워드도 static 메소드 안에서 사용 불가.
+super()는 부모클래스에 생성자가 오버로딩된 형태로 여러 개 존재할 때 그 중에서 어떤 생성자를 호출할 지 결정할 수 있다.
+**그러나 super()생성자를 사용자가 명시적으로 호출하지 않는다면,
+컴파일러는 자식클래스생성자에서 super()의 디폴트 생성자를 자동으로 호출한다.
+----------------------------------------------------------------------------------------------------
+ ex)
+     class Parent
+     {
+    	  String name;
+		  public Parent(String n){
+			  name=n;
+		  }//인자 생성자----
+	     }//////////////////
+	  class Son extends Parent
+	  {
+		  public Son(){
+			super("아무개");
+			//만일 위 문장이 없다면 에러발생
+		 //컴파일러가 super()를 자동호출 하므로...
+	    }//---------
+	  }////////////////////
+--------------------------------------------------------------------------------------------------
+2. 다중 상속
+다중 상속은 클래스가 하나 이상의 클래스를 상속받는 것을 뜻한다. C++, 파이썬 등 많은 언어들이
+다중 상속을 지원하지만 자바는 다중 상속을 지원하지 않는다.
+만약 자바가 다중 상속을 지원한다면 다음과 같은 코드가 만들어 질 수 있을 것이다.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class A {
+    public void msg() {
+        System.out.println("A message");
+    }
+}
+
+class B {
+    public void msg() {
+        System.out.println("B message");
+    }
+}
+
+class C extends A, B {
+    public void static main(String[] args) {
+        C test = new C();
+        test.msg();
+            }
+        }
+------------------------------------------------------------------------------------------------------------
+다중 상속을 지원한다고 가정하고 A, B 라는 클래스를 다음과 같이 동시에 상속하도록 했다. (실제로는 동작할 수 없는 코드이다.)
+위 main 메소드에서 test.msg(); 실행 시 A 클래스의 msg 메소드를 실행해야 할까?
+아니면 B 클래스의 msg 메소드를 실행해야 할까?
+다중 상속을 지원하게 되면 이렇듯 애매모호한 부분이 생기게 된다.
+자바는 이러한 불명확한 부분을 애초에 잘라 낸 언어이다.
+
+3.인터페이스(Interface):다른 언어들에서는 찾기 힘든 자바의 고급 기능이다.
+인터페이스는 도대체 왜 필요하게 된 걸까? 다음의 경우를 생각 해 보자.
+ ***************************************************
+ 난 동물원의 사육사이다.
+ 육식동물이 들어오면 난 고기를 던져준다.
+ 호랑이던 사자던 상관하지 않는다.
+ 이런 케이스를 코드로 담아보자.
+ ****************************************************
+ public class Animal {
+     String name;
+     public void setName(String name) {
+         this.name = name;
+     }
+ }
+
+ public class Tiger extends Animal { }
+
+ public class Lion extends Animal { }
+
+ public class ZooKeeper {
+     public void feed(Tiger tiger) { // 메소드 오버로딩
+         System.out.println("feed tiger");
+     }
+     public void feed(Lion lion) { // 메소드 오버로딩
+         System.out.println("feed lion");
+     }
+ }
+ ZooKeeper 클래스는 호랑이가 왔을 때, 사자가 왔을 때 각각 다른 feed 메소드가 호출된다.(메소드 오버로딩)
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ ※ 동물원에 호랑이와 사자뿐이라면 ZooKeeper 클래스는 완벽하겠지만 악어, 표범등이 계속 추가된다면 ZooKeeper는 육식동물이 추가될 때마다 매번 다음과 같은 feed 메소드를 추가해야 한다.
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ public void feed(Crocodile crocodile) {
+     System.out.println("feed crocodile");
+ }
+  public void feed(Leopard leopard) {
+     System.out.println("feed leopard");
+ }
+ ...
+ 육식동물이 추가 될 때마다 feed 메소드를 추가해야 한다면 사육사(ZooKeeper)가 얼마나 귀찮겠는가?
+ 이런 어려움을 극복하기 위해서 이제 인터페이스가 필요하다.
+다음과 같이 육식동물(Predator) 인터페이스를 작성 해 보자.
+public interface Predator {
+}
+----------*** interface 작성 방법 ---------------------------------------------------------------
+위 코드와 같이 인터페이스는 class가 아닌 interface 라는 키워드를 이용하여 작성한다.
+인터페이스 구현은 implements 라는 키워드를 사용한다.
+인터페이스의 메소드는 이름만 있고 그 내용은 없다.
+멤버가 추상메소드+ 상수로만 구성됨.
+----------------------------------------------------------------------------------------------------
+그리고 Tiger, Lion 은 작성한 인터페이스를 구현하도록 변경한다.
+public class Tiger extends Animal implements Predator { }
+public class Lion extends Animal implements Predator { }
+
+Tiger, Lion이 Predator 인터페이스를 구현하면 ZooKeeper 클래스의 feed 메소드를 다음과 같이 변경 할 수 있다.
+----**** 변경전 ***-----
+public void feed(Tiger tiger) {
+    System.out.println("feed tiger");
+}
+
+public void feed(Lion lion) {
+    System.out.println("feed lion");
+}
+----**** 변경후***---
+public void feed(Predator predator) {
+    System.out.println("feed tiger");
+}
+--------------------------------------------------
+tiger - Tiger 클래스의 객체, Predator 인터페이스의 객체
+lion - Lion 클래스의 객체, Predator 인터페이스의 객체
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+※ 객체가 한 개 이상의 자료형 타입을 갖게 되는 특성을 다형성(폴리모피즘)이라고 한다.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+그런데 위 ZooKeeper 클래스에 약간의 문제가 발생했다. 아래의 ZooKeeper클래스의 feed 메소드를 보면 호랑이가 오던지,
+사자가 오던지 무조건 "feed tiger"라는 문자열을 출력한다.
+사자가 오면 "feed lion"을 출력해야 하지 않겠는가! Predator 인터페이스에 다음과 같은 메소드를 추가 해 보자.
+
+public interface Predator {
+    public String getName();
+}
+getName이라는 메소드는 인터페이스를 implements한 클래스들이 구현해야만 하는 것이다.
+인터페이스에 위처럼 메소드를 추가하면 Tiger, Lion등 Predator 인터페이스를 구현한 클래스들에서 컴파일 오류가 발생할 것이다.
+Tiger, Lion에 getName 메소드를 구현하도록 하자.
+public class Tiger extends Animal implements Predator {
+    public String getName() {
+        return this.name;
+    }
+}
+
+public class Lion extends Animal implements Predator {
+    public String getName() {
+        return this.name;
+    }
+}
+
+이제 ZooKeeper 클래스도 다음과 같이 변경이 가능하다.
+-----------------------------------------------------------------------------------------------------------------
+public class ZooKeeper {
+    public void feed(Predator predator) {
+        System.out.println("feed "+predator.getName());
+    }
+    public static void main(String[] args) {
+        Tiger tiger = new Tiger();
+        tiger.setName("tiger");
+        Lion lion = new Lion();
+        lion.setName("lion");
+        ZooKeeper zooKeeper = new ZooKeeper();
+        zooKeeper.feed(tiger);
+        zooKeeper.feed(lion);
+    }
+}
+----------------------------------------------------------------------------------------------------------------

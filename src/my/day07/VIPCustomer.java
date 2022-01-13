@@ -6,6 +6,12 @@ public class VIPCustomer  extends Customer {
     double saleRatio; //할인율
 
     public VIPCustomer(){
+
+    }
+
+    public VIPCustomer(int id, String name, int agentID){
+        super(id, name); // 부모 생성자 호출
+        this.agentID = agentID;
         customerGrade = "VIP";
         bonusRatio = 0.05;
         saleRatio = 0.1;
