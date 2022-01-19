@@ -1,0 +1,71 @@
+1.인터페이스(Interface):다른 언어들에서는 찾기 힘든 자바의 고급 기능이다.
+인터페이스는 도대체 왜 필요하게 된 걸까? 다음의 경우를 생각 해 보자.
+
+***************************************************
+ 1. 요구사항
+ 난 동물원의 사육사이다. (ZooKeeper class)
+ 육식동물이 들어오면 난 고기를 던져준다. (feed())
+ 호랑이던 사자던 상관하지 않는다.
+ 이런 케이스를 코드로 담아보자.
+ ****************************************************
+ public class Animal {
+     String name;
+     public void setName(String name) {
+         this.name = name;
+     }
+ }
+
+ public class Tiger extends Animal { }
+ public class Lion extends Animal { }
+
+ public class ZooKeeper {
+     public void feed(Tiger tiger) { // 메소드 오버로딩
+         System.out.println("feed tiger");
+     }
+     public void feed(Lion lion) { // 메소드 오버로딩
+         System.out.println("feed lion");
+     }
+ }
+ *******************************************************
+ 2. 문제점 발생 (새로운 요구사항)
+ 만약 동물원에 호랑이와 사자뿐이라면 ZooKeeper 클래스는 완벽하겠지만 악어, 표범등이 계속 추가된다면
+ ZooKeeper는 육식동물이 추가될 때마다 매번 다음과 같은 feed 메소드를 추가해야 한다.
+    public void feed(Crocodile crocodile) {
+         System.out.println("feed crocodile");
+     }
+    public void feed(Leopard leopard) {
+         System.out.println("feed leopard");
+     }
+     ...
+************************************************************
+3. 문제해결 방법 1:
+feed()메소드의 매개변수를 하나의 타입으로 묶어준다. feed(Animal animal)
+그러나 같은 이름으로 실행된다. 동물 각 객체별로 다른 이름을 부르게 해야한다.(if~elseif~)
+가독성이 떨어진다..
+
+문제해결 방법 2: 육식동물 인터페이스 정의하고 getName() 추상메소드를 갖는다.(인터페이스와 다형성)
+
+ public interface Predator {
+ public String getName();
+ }
+----------*** interface 작성 방법 ---------------------------------------------------------------
+위 코드와 같이 인터페이스는 class가 아닌 interface 라는 키워드를 이용하여 작성한다.
+인터페이스 구현은 implements 라는 키워드를 사용한다.
+인터페이스의 메소드는 이름만 있고 그 내용은 없다.
+멤버가 추상메소드+ 상수로만 구성됨.
+
+tiger - Tiger 클래스의 객체, Predator 인터페이스의 객체
+lion - Lion 클래스의 객체, Predator 인터페이스의 객체
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+※ 객체가 한 개 이상의 자료형 타입을 갖게 되는 특성을 다형성(폴리모피즘)이라고 한다
+public class Tiger extends Animal implements Predator {
+    public String getName() {
+        return this.name;
+    }
+}
+
+public class Lion extends Animal implements Predator {
+    public String getName() {
+        return this.name;
+    }
+}
