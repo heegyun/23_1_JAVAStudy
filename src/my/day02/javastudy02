@@ -58,3 +58,25 @@
 3> 지역변수  : local 변수, automatic변수 
 	      메소드 블럭 안, 또는 인스턴스 블록 안에서 선언된 변수
 */
+
+3. 자바의 자료형
+1) Primitive Type :   기본 자료형  ex) int a=10; char ch='A';
+2) Reference Type :  참조형       ex) Demo d=new Demo(); //.여기서 d는 참조형 변수
+			          ex) String str="Hello";
+			              String str=new String("Hello");
+1) Primitive Type:
++------ㄱ) 수치형 
+	+--a) 정수형--byte : 1byte(8bit) -2^7 ~ 2^7 -1
+		    +short: 2byte
+		    +int   : 4byte ***
+		    +long : 8byte
+	+--b) 실수형--float: 4byte
+		    +double: 8byte ***
++------ㄴ) 문자형--char : '가', 'A', '\u0000' 크기: 2byte: 0 ~65535[16비트]
++------ㄷ) 논리형-1 bit. boolean : true, false
+				boolean b=false;
+
+2) Reference Type:
+		+-------ㄱ) 클래스형
+		+-------ㄴ) 인터페이스형
+		+-------ㄷ) 배열
