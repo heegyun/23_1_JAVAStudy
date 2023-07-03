@@ -5,12 +5,8 @@
      - 돈까스: 8000원
      - 칼국수: 6000원
      - 왕만두: 5000원
-2. 돈가스, 칼국수, 왕만두의 개수를 입력창에 차례로 입력할 것
-3. 숫자들이 오른쪽 정렬된 것에 유의할 것
-------------
-입력 예
------------
-16 8 1
+2. 숫자들이 오른쪽 정렬된 것에 유의할 것 (printf)
+
 ------------
 출력 예
 -----------
@@ -21,28 +17,34 @@
 ========================
 총합: 181000
 
---------------------------
-뼈대 코드
----------------------------
 public class Receipt {
 
-
-    // 멤버변수(돈가수 갯수, 칼국수 갯수, 왕만두 갯수
-    // 1. donNum, kalNum, wangNum
-
-    // 2. 돈가스 합계변수, 칼국수 합계변수, 왕만두 합계변수 (모두 0으로 초기화)
+     // 1. donNum, kalNum, wangNum
+    int donNum = 16;
+    int kalNum = 8;
+    int wangNum = 1;
+    // 2. 돈가스 합계변수, 칼국수 합계변수, 왕만두 합계변수 
     // donSum, kalSum, wangSum
-
-    // 3. 밥값 계산 변수 total 0으로 초기화
-
+    int donSum = 8000 * donNum;
+    int kalSum = 6000 * kalNum;
+    int wangSum = 5000 * wangNum;
+    // 3. 밥값 계산 변수(total) 
+    //  위 3개의 합계값을 더한다.
+      int total = donSum + kalSum + wangSum;
     // 4. 생성자
 
     // 계산서 출력 매소드 정의
-    // 5. void cal()
+    // 5. public void cal(){
+        System.out.printf("%s X %2d =%6d\n", "돈가스", donNum, donSum);
+        System.out.printf("%s X %2d =%6d\n", "칼국수", kalNum, kalSum);
+        System.out.printf("%s X %2d =%6d\n", "왕만두", wangNum, wangSum);
+        System.out.printf("==========================\n");
+        System.out.printf("총합:%d\n", total);
+     }
 
     public static void main(String[] args) {
-        // Scanner 객체를 이용해서 아래 변수 값을 입력 받아 초기화 하시오.
-
+      Receipt receipt = new Receipt();
+      receipt.cal();
     }
 }
 
