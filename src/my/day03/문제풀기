@@ -29,6 +29,7 @@ public class ContinueSamYukGu{
   }
 
 }
+
 문제3: 이번 한 주간 사관학교스터디에 접속한 사용자 수는 아래와 같다.
 월: 581명
 화: 512명
@@ -42,19 +43,20 @@ public class ContinueSamYukGu{
 출력 예
 -------------------------------
 하루 평균 사용자: 416.43명
-----------------------
+
+
+-------------------------
 뼈대코드
 --------------------------
  public class DailyUser {
   public static void main(String[] args) {
     // 배열 생성
-    int[] users = { 581, 512, 527, 495, 423, 141, 236 };
    
     // 계산
-    double dailyUser = average(users);
+   
     
     // 출력
-    System.out.printf("하루 평균 사용자: %.2f명", dailyUser);
+   
   }
 
   // 정수 배열을 입력받아, 평균을 반환
