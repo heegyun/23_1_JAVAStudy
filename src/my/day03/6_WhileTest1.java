@@ -1,4 +1,4 @@
-package my.day04;
+package my.day03;
 /*
     10부터 1까지 숫자를 거꾸로 출력하기.(while반복) 10 9 8 7 6 5 4 3 2 1
     초기식;
