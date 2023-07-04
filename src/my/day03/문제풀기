@@ -1,5 +1,5 @@
 문제1: -100부터 25까지 출력해보세요
-public class ContinueSamYukGu{
+public class WhileTest3{
    public static void main(String[] args){
       // 초기값 
      // while(종료조건){ // 
