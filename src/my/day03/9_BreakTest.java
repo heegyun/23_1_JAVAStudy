@@ -1,4 +1,4 @@
-package my.day04;
+package my.day03;
 
 public class BreakTest {
     public static void main(String[] args) {
