@@ -72,3 +72,16 @@ while (treeHit < 10) {
         System.out.println("나무 넘어갑니다.");
     }
 }
+----------------------------------------------------
+3. for문 예제
+String[] numbers = {"one", "two", "three"};
+for(int i=0; i<numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+----------for문의 구조-----------------------
+for (초기치; 조건문; 증가치) {
+    ...
+}
+----------------------------------
+
