@@ -1,4 +1,4 @@
-package day05;
+package day04;
 // 객체 미 사용
 // 문제점 : 캐릭터가 늘어 날 수록 변수가 늘어나야 함
 public class Main { // 기본타입 변수로 처리
