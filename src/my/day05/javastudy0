@@ -16,6 +16,7 @@
 2. OOP의 주요 특징
 1) 추상화(Abstraction): 어떤 객체에서 주된 특징(속성)과 기능(메소드)을 부각시켜 표현하고, 나머지 부분은 과감히 생략하는 것
 2) 은닉화(Encapsulation)
-3) 다형성(Polymorphism): "형태가 다양하다"라는 말임.
+3) 상속성(Inheritance)
+4) 다형성(Polymorphism): "형태가 다양하다"라는 말임.
 - 상속과 오버라이딩으로 구현함
-4) 상속성(Inheritance)
+
