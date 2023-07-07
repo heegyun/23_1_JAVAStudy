@@ -1,0 +1,15 @@
+
+// 상속을 통한 형변환(다형성)
+public class InheritanceTest2 {
+
+	public static void main(String[] args) {
+	   칼 a칼 = new 칼();
+	   a칼 = new 활();
+		
+	}
+
+}
+
+class 활 extends 칼 {
+	
+}
