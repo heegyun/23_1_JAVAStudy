@@ -1,2 +1,14 @@
-/*  
+/*  정사각형(Square), 삼각형(Triangle), 원(Circle) 클래스가 하나의 도형(Shape) 클래스로부터 파생되었다고 가정할 때,
+  Square, Triangle, Circle 객체는 부모 클래스인 Shape 타입으로 해석 가능
 */
+---뼈대 코드---
+public class UpCastingTest {
+    public static void main(String[] args) {
+        Square s = new Square();
+        s.name = "정사각형";
+        Triangle t = new Triangle();
+        t.name = "삼각형";
+        Circle c = new Circle();
+        c.name = "원";
+   }
+}
