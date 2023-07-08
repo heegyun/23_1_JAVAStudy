@@ -1,0 +1,11 @@
+-상속과 업캐스팅
+  정의된 자식 객체는 부모의 타입으로 해석(업 캐스팅)될 수 있음
+  이를 통해 서로 다른 자식 객체를 한부모의 타입으로 묶어 관리 가능
+예) Person p = new Student(); // 학생 is a 사람 (O) 
+    Person p1 = new Teacher(); // 교사 is a 사람 (O)
+예2) Person[] parr = new Person[5];
+     parr[0] = p; 
+     parr[1] = p1; 
+예3) ArrayList<Person> arr = new ArrayList<Person>();
+      arr.add(new Student());
+      arr.add(new Teacher());
