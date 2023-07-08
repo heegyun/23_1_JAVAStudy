@@ -7,9 +7,11 @@
 -------뼈대 코드---------
 public class GameCharacterTest {
 	public static void main(String[] args) {
-		// 초심자 객체 생성
-		Novice aNovice = new Novice();
-		// 마법사 객체 생성
-		Wizard aWizard = new Wizard();
+		Wizard wizard = new Wizard(); // 객체 생성
+        	wizard.name = "간달프";
+        	wizard.hp = 100;
+        	wizard.mp = 80;
+        	wizard.punch();
+        	wizard.fireball();
 	}
 }
