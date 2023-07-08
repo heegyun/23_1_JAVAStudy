@@ -1,3 +1,28 @@
 /* 새로운 캐릭터인 기사(Knight) 클래스를 추가 하시오.
  초심자 캐릭터의 필드와 메소드를 가지고 있고, 추가로 기력 필드 stamina와 베기 공격 메소드 slash()가 추가
 */
+public class GameCharacterTest {
+
+	public static void main(String[] args) {
+//		 Wizard wizard = new Wizard(); // 객체 생성
+//	        wizard.name = "간달프";
+//	        wizard.hp = 100;
+//	        wizard.mp = 80;
+//	        wizard.punch();
+//	        wizard.fireball();
+   		Knight knight = new Knight();
+   		knight.name = "킹아서";
+   		knight.hp = 150;
+   		knight.stamina = 70;
+   		knight.punch();
+   		knight.slash();
+	}
+
+}
+
+  Knight knight = new Knight();
+        knight.name = "킹아서";
+        knight.hp = 150;
+        knight.stamina = 70;
+        knight.punch();
+        knight.slash();
