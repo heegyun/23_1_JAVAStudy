@@ -19,10 +19,3 @@ public class GameCharacterTest {
 	}
 
 }
-
-  Knight knight = new Knight();
-        knight.name = "킹아서";
-        knight.hp = 150;
-        knight.stamina = 70;
-        knight.punch();
-        knight.slash();
