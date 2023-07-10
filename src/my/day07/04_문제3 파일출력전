@@ -13,9 +13,12 @@ public class BankAccountTest {
 //위, 객체 a, b의 형식에 맞도록  BankAccount 클래스 정의하기
 
 class BankAccount{
-// 
+// 속성(멤버변수 선언), 은닉화 하기
+// userName, number, amount
+// 인자 생성자.
 
- String toString(){
+
+String toString(){
    return String.format("%s, %s, %d", username, number, amount); 
 }
 }
