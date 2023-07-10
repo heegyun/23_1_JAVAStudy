@@ -12,7 +12,7 @@ public class BankAccountTest {
         // FileReader객체 생성
 
        int ch;
-        while ((ch = fr.read()) != -1) { // 파일의 한 문자를 읽음. (읽을 문자가 없는경우, -1 반환)
+        while ((ch = fr.read()) != -1) { // 파일의 한 문자를 읽음. (읽을 문자가 없는경우, -1 반환) // 한줄단위로 읽기 readLine()
             System.out.print((char) ch); // 문자로 형변환
             // Thread.sleep(200);
         }
