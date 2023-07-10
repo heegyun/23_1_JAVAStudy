@@ -34,6 +34,27 @@ public class Main {
         // 출력 => LGTv 게임모드전환!
 
       System.out.println("== 표준Tv 리모콘 들여온 후 ==");
+        // 표준TV 리모콘을 만든다.
+        표준TV a표준TV; 
       
+        // a표준TV변수에 샤오미TV객체를 연결한다.
+         
+        // 샤오미TV켜기
+
+        // 샤오미TV끄기
+
+        // a표준TV변수에 삼성TV객체를 연결한다.
+
+         // 삼성TV켜기
+
+        // 삼성TV끄기
+
+        // a표준TV변수에 LGTV객체를 연결한다.
+
+         // LGTV켜기
+
+        // LGTV끄기
+
+
     }
 }
