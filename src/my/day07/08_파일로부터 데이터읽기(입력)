@@ -1,0 +1,21 @@
+/*
+ 두 계좌 정보를 파일로부터 읽어와,
+  - 프로그램 데이터로 복구(화면에 출력)
+  - 이를 위해 File 객체와 FileReader 객체를 사용
+
+*/
+public class BankAccountTest {
+    public static void main(String[] args) throws IOException,
+            InterruptedException {
+       // 파일객체 생성
+
+        // FileReader객체 생성
+
+       int ch;
+        while ((ch = fr.read()) != -1) { // 파일의 한 문자를 읽음. (읽을 문자가 없는경우, -1 반환)
+            System.out.print((char) ch); // 문자로 형변환
+            // Thread.sleep(200);
+        }
+        fr.close();
+    }
+}
