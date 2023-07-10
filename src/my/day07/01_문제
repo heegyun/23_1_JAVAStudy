@@ -2,36 +2,36 @@
 /*
 서로 다른 3개의 TV를 서로 다른 종류의 리모콘 3개로 컨트롤 하기 
 (상속 없이 3개의 클래스 작성하기)
-
-*/
-
+-----------------
 뼈대 코드
 ---------------
-class Main {
-  public static void main(String[] args) {
-    샤오미Tv a샤오미Tv = new 샤오미Tv();
-    삼성Tv a삼성Tv = new 삼성Tv();
-    LGTv aLGTv = new LGTv();
-    
-    a샤오미Tv.켜기();
-    // 출력 => 샤오미Tv 켜집니다.
-    a샤오미Tv.끄기();
-    // 출력 => 샤오미Tv 꺼집니다.
-    a샤오미Tv.vr켜기();
-    // 출력 => 샤오미Tv vr켜기!
-    
-    a삼성Tv.켜기();
-    // 출력 => 삼성Tv 켜집니다.
-    a삼성Tv.끄기();
-    // 출력 => 삼성Tv 꺼집니다.
-    a삼성Tv.ar켜기();
-    // 출력 => 삼성Tv ar켜기!
-    
-    aLGTv.켜기();
-    // 출력 => LGTv 켜집니다.
-    aLGTv.끄기();
-    // 출력 => LGTv 꺼집니다.
-    aLGTv.게임모드전환();
-    // 출력 => LGTv 게임모드전환!
-  }
+*/
+public class Main {
+    public static <샤오미Tv, 삼성Tv, LGTv> void main(String[] args) {
+        샤오미TV a샤오미TV = new 샤오미TV();
+        삼성TV a삼성TV = new 삼성TV();
+        LGTV aLGTV = new LGTV();
+
+        a샤오미TV.켜기();
+        // 출력 => 샤오미Tv 켜집니다.
+        a샤오미TV.끄기();
+        // 출력 => 샤오미Tv 꺼집니다.
+        a샤오미TV.vr켜기();
+        // 출력 => 샤오미Tv vr켜기!
+
+        a삼성TV.켜기();
+        // 출력 => 삼성Tv 켜집니다.
+        a삼성TV.끄기();
+        // 출력 => 삼성Tv 꺼집니다.
+        a삼성TV.ar켜기();
+        // 출력 => 삼성Tv ar켜기!
+
+        aLGTV.켜기();
+        // 출력 => LGTv 켜집니다.
+        aLGTV.끄기();
+        // 출력 => LGTv 꺼집니다.
+        aLGTV.게임모드전환();
+        // 출력 => LGTv 게임모드전환!
+    }
 }
+
