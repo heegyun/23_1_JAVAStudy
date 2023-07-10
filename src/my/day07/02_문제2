@@ -1,4 +1,39 @@
 /*
-공통적인 기능(켜기, 끄기)만 빼서 통합 리모콘 기능을 갖는 객체를 만들고 tv를 조작하도록 수정하기*/
+공통적인 기능(켜기, 끄기)만 빼서 통합 리모콘 기능을 갖는 객체를 만들고 tv를 조작하도록 수정하기
 
+*/
 
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("== 표준Tv 리모콘 들여오기 전 ==");
+
+        샤오미TV a샤오미TV = new 샤오미TV();
+        삼성TV a삼성TV = new 삼성TV();
+        LGTV aLGTV = new LGTV();
+
+        a샤오미TV.켜기();
+        // 출력 => 샤오미Tv 켜집니다.
+        a샤오미TV.끄기();
+        // 출력 => 샤오미Tv 꺼집니다.
+        a샤오미TV.vr켜기();
+        // 출력 => 샤오미Tv vr켜기!
+
+        a삼성TV.켜기();
+        // 출력 => 삼성Tv 켜집니다.
+        a삼성TV.끄기();
+        // 출력 => 삼성Tv 꺼집니다.
+        a삼성TV.ar켜기();
+        // 출력 => 삼성Tv ar켜기!
+
+        aLGTV.켜기();
+        // 출력 => LGTv 켜집니다.
+        aLGTV.끄기();
+        // 출력 => LGTv 꺼집니다.
+        aLGTV.게임모드전환();
+        // 출력 => LGTv 게임모드전환!
+
+      System.out.println("== 표준Tv 리모콘 들여온 후 ==");
+      
+    }
+}
