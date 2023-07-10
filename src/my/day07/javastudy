@@ -36,6 +36,13 @@ public interface Predator {
 2.2 FileWriter 클래스
 - FileWriter는 파일에 문자 출력을 가능케 하는 클래스
 - File 객체 또는 파일 경로를 지정해 객체를 만들 수 있으며, 다양한 기능을 제공
+- void write(String s), void write(char[] buf), close()
+2.3 FileReader 클래스
+- FileReader는 파일로부터 문자 입력을 받아오는 클래스
+- File 객체 또는 파일 경로를 지정해 객체를 만들 수 있으며, 다양한 기능을 제공
+- int read(), int read(char[] buf), close()
+
+
 
 
 
