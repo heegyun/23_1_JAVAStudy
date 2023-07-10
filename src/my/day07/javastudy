@@ -9,61 +9,36 @@
 public class Tiger extends Animal implements Predator { }
 public class Lion extends Animal implements Predator { }
 
-Tiger, Lion이 Predator 인터페이스를 구현하면 ZooKeeper 클래스의 feed 메소드를 다음과 같이 변경 할 수 있다.
-----**** 변경전 ***-----
-public void feed(Tiger tiger) {
-    System.out.println("feed tiger");
-}
-
-public void feed(Lion lion) {
-    System.out.println("feed lion");
-}
-----**** 변경후***---
-public void feed(Predator predator) {
-    System.out.println("feed tiger");
-}
---------------------------------------------------
-tiger - Tiger 클래스의 객체, Predator 인터페이스의 객체
-lion - Lion 클래스의 객체, Predator 인터페이스의 객체
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ※ 객체가 한 개 이상의 자료형 타입을 갖게 되는 특성을 다형성(폴리모피즘)이라고 한다.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-그런데 위 ZooKeeper 클래스에 약간의 문제가 발생했다. 아래의 ZooKeeper클래스의 feed 메소드를 보면 호랑이가 오던지,
-사자가 오던지 무조건 "feed tiger"라는 문자열을 출력한다.
-사자가 오면 "feed lion"을 출력해야 하지 않겠는가! Predator 인터페이스에 다음과 같은 메소드를 추가 해 보자.
+
 
 public interface Predator {
     public String getName();
 }
-getName이라는 메소드는 인터페이스를 implements한 클래스들이 구현해야만 하는 것이다.
-인터페이스에 위처럼 메소드를 추가하면 Tiger, Lion등 Predator 인터페이스를 구현한 클래스들에서 컴파일 오류가 발생할 것이다.
-Tiger, Lion에 getName 메소드를 구현하도록 하자.
-public class Tiger extends Animal implements Predator {
-    public String getName() {
-        return this.name;
-    }
-}
 
-public class Lion extends Animal implements Predator {
-    public String getName() {
-        return this.name;
-    }
-}
 
-이제 ZooKeeper 클래스도 다음과 같이 변경이 가능하다.
+
 -----------------------------------------------------------------------------------------------------------------
-public class ZooKeeper {
-    public void feed(Predator predator) {
-        System.out.println("feed "+predator.getName());
-    }
-    public static void main(String[] args) {
-        Tiger tiger = new Tiger();
-        tiger.setName("tiger");
-        Lion lion = new Lion();
-        lion.setName("lion");
-        ZooKeeper zooKeeper = new ZooKeeper();
-        zooKeeper.feed(tiger);
-        zooKeeper.feed(lion);
-    }
-}
+자바의 입출력(IO)
+1. 파일 입출력
+- 데이터를 파일로부터 입력받거나 파일에 출력하는 것으로 
+- 데이터 보존을 목적으로 함(실행 중인 프로그램 속 데이터는 사라지기 때문)
+- 파일(file)이란 데이터 관리를 위한 논리적 단위
+- 파일화된 데이터는 스토리지(storage)에 의해 반영구적 보존이 가능
+
+2. 파일 입출력 기본 API
+- 자바는 파일 입출력을 위한 API를 java.io 패키지에 담아 제공
+- 가장 기본이 되는 클래 스는 File, FileWriter, FileReader 등
+
+2.1  File 클래스
+- File은 물리적 파일을 참조하기 위한 클래스
+- 파일 경로를 지정해 객체를 만들 수 있고 이를 통해 다양한 기능을 제공
+-
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------
