@@ -1,5 +1,5 @@
 // 추상클래스와 인터페이스
-class Main {
+class Main2 {
 	public static void main(String[] args) {
 		칼 a무기1 = new 칼();
 		활 a무기2 = new 활();
