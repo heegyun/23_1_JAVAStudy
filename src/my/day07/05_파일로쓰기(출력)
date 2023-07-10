@@ -1,5 +1,24 @@
 /*
    앞의 두 계좌 정보를 파일에 문자 출력함
   - 이를 위해 File 객체와 FileWriter 객체를 사용
+  - 파일이름: accounts-data.txt
 */
+
+public class BankAccountTest {
+    public static void main(String[] args) throws IOException {
+        BankAccount a = new BankAccount("빌 게이츠", "206-000001", 1000000);
+        BankAccount b = new BankAccount("워런 버핏", "206-000002", 1000000);
+         //File 객체 생성
+     
+         // FileWriter 객체 생성
+
+         // 파일에 a계좌의 정보 쓰기(출력)
+     
+        
+         // 파일에 b계좌의 정보 쓰기(출력)
+       
+         // 파일 닫기   
+     
+    }
+}
 
