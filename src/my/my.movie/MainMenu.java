@@ -1,5 +1,3 @@
-package moviereservation;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
