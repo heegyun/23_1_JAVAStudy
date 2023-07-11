@@ -1,7 +1,27 @@
 /*
-1. 추상 클래스
-2. 템플릿 메소드 패턴 적용하기
+1. 게임플레이어 레벨을 나타내는 PlayerLevel추상 클래스 정의 하기. 
+이때, 템플릿 메소드 패턴을 갖는 go() 메소드를 갖고 있다.
 */
+// 뼈대코드----------------------
+public class GameTest {
+    public static void main(String[] args) {
+
+        BegginerLevel begginerLevel = new BegginerLevel();
+        AdvancedLevel advancedLevel = new AdvancedLevel();
+        SuperLevel superLevel = new SuperLevel();
+
+        begginerLevel.go(1);
+        begginerLevel.showLevelMessage();
+
+        advancedLevel.go(2);
+        advancedLevel.showLevelMessage();
+
+        superLevel.go(3);
+        superLevel.showLevelMessage();
+
+    }
+}
+////////////////////////////////////////////////
 public abstract class PlayerLevel {
 
     //템플릿 메소드
