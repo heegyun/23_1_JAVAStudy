@@ -22,3 +22,14 @@
        - 우편물 배달방식과 비슷
        ㄱ) UDP통신 방식은 데이터의 손실이 있을 수 있는 통신방식
        ㄴ) 또한 클라이언트와 서버와의 연결이 이뤄지지 않은 상태에서도 데이터를 보낼 수있다.
+
+4] 네트워크 프로그램 절차(TCP방식)
+1) IP를 알아낸다.----> InetAddress 클래스로
+2) TCP연결---> Socket 클래스를 사용
+- 클라이언트 경우: Socket s=new Socket(ip주소, port번호)
+- 서버의 경우(서버소켓과 소켓이 필요):
+	ServerSocket ser=new ServerSocket(PORT);
+	Socket s=ser.accept();
+3) 연결되고 나면 Socket을 사용하여 서버로의 스트림을 얻어낸다.
+	s.getInputStream()....등
+4) 이 스트림을 통해 데이터를 주고 받는다.(이때 필터스트림 이용 가능)
