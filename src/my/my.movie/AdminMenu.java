@@ -31,40 +31,4 @@ public class AdminMenu extends AbstractMenu {
         }
     }
 
-    private void printAllMovies() {
-        try {
-            ArrayList<Movie> movies = Movie.findAll(); // 모든 영화를 가져옴
-            System.out.println();
-            for (int i = 0; i < movies.size(); i++) {
-                System.out.printf("%s\n", movies.get(i).toString()); // 출력
-            }
-        } catch (IOException e) {
-            System.out.println("데이터 접근에 실패하였습니다."); // 예외 처리
-        }
-    }
-
-    private void createMovie() {
-        System.out.print("제목: ");
-        String title = scanner.nextLine(); // 제목 입력
-        System.out.print("장르: ");
-        String genre = scanner.nextLine(); // 장르 입력
-        Movie movie = new Movie(title, genre); // 영화 객체 생성
-        try {
-            movie.save(); // 영화 객체를 저장
-            System.out.println(">> 등록되었습니다.");
-        } catch (IOException e) { // 예외 처리
-            System.out.println(">> 실패하였습니다.");
-        }
-    }
-
-    private void deleteMovie() {
-        printAllMovies(); // 모든 영화를 출력
-        System.out.print("삭제할 영화를 선택하세요: ");
-        try {
-            Movie.delete(scanner.nextLine()); // 사용자 입력값 기준으로 삭제 요청
-            System.out.println(">> 삭제되었습니다.");
-        } catch (IOException e) {
-            System.out.println(">> 삭제에 실패하였습니다.");
-        }
-    }
-}
+   
