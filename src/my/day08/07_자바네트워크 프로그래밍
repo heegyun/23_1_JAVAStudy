@@ -7,3 +7,11 @@
 • 웹 기반이므로 개발된 웹 서비스들을 스마트폰 등 다른 클라이언트의 애플리케이션에 제공하기 쉽다.
 [URL 구조]
 • 프로토콜://도메인(IP 주소):포트/서브 디렉터리/자원 이름
+
+- URL 클래스와 메소드
+메소드                                                               설명
+URL(String spec)                                               문자열 정보를 이용하여 URL객체를 생성한다.
+URL(String protocol,String host, int port, String file)        프로토콜, 호스트, 포트, 경로를 포함한 파일 이름 등 문자열 파라미터를 이용하여 URL객체를 생성한다.
+String getProtocol()                                            현재 URL 서버의 프로토콜 정보를 가져온다. getPath(), getPort(), getHost(), getFile()
+URLConnection openConnection()                                  네트워크 연결을 처리하는 URLConnection 객체를 리턴한다.
+InputStream openStream()                                        입력스트림으로 데이터를 전송받는다.
