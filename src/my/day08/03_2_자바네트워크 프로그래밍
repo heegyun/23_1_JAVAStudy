@@ -5,6 +5,7 @@
 • OAuth2 등 검증된 인증 솔루션과 결합하기 쉽다.
 • 기존 Java, JSP 개발자들이 서버 응용 프로그램을 쉽게 개발할 수 있다.
 • 웹 기반이므로 개발된 웹 서비스들을 스마트폰 등 다른 클라이언트의 애플리케이션에 제공하기 쉽다.
+
 [URL 구조]
 • 프로토콜://도메인(IP 주소):포트/서브 디렉터리/자원 이름
 
@@ -15,3 +16,12 @@ URL(String protocol,String host, int port, String file)        프로토콜, 호
 String getProtocol()                                            현재 URL 서버의 프로토콜 정보를 가져온다. getPath(), getPort(), getHost(), getFile()
 URLConnection openConnection()                                  네트워크 연결을 처리하는 URLConnection 객체를 리턴한다.
 InputStream openStream()                                        입력스트림으로 데이터를 전송받는다.
+
+
+- TCP/IP소켓 프로그래밍
+• TCP/IP는 Transmission Control Protocol/Internet Protocol의 약어로, 네트워크 시스템의 체계를 정리한 통신 프로토콜을 말한다.
+
+[Socket/ServerSocket 클래스]
+• Socket 클래스:클라이언트에서 서버에 접속하는 데 필요
+• ServerSocket 클래스: 프로그램이 서버로 동작하면서 클라이언트의 연결을 받는데 필요.
+
