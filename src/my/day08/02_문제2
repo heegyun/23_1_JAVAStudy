@@ -1,8 +1,6 @@
 /* 
  3개의 게임플레이어 레벨 클래스 정의후, 메소드 재정의 하시오.
  - BegginnerLevel, AdvancedLevel, SuperLevel
-
-
 */
 public class AdvancedLevel extends  PlayerLevel{
     @Override
