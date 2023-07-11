@@ -1,5 +1,3 @@
-package moviereservation;
-
 import java.io.*;
 import java.time.Instant;
 import java.util.ArrayList;
