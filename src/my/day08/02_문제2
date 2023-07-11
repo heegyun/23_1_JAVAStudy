@@ -2,7 +2,7 @@
  3개의 게임플레이어 레벨 클래스 정의후, 메소드 재정의 하시오.
  - BegginnerLevel, AdvancedLevel, SuperLevel
 */
-public class AdvancedLevel extends  PlayerLevel{
+ class AdvancedLevel extends  PlayerLevel{
     @Override
     void run() {
         System.out.println("빠르게 달린다.");
@@ -23,3 +23,27 @@ public class AdvancedLevel extends  PlayerLevel{
         System.out.println("중급자 레벨입니다.");
     }
 }
+ class BegginerLevel extends  PlayerLevel {
+
+    @Override
+    void run() {
+        System.out.println("천천히 달립니다.");
+    }
+
+    @Override
+    void jump() {
+        System.out.println("초급자 레벨 점프");
+    }
+
+    @Override
+    void turn() {
+        System.out.println("초급자 레벨 턴");
+    }
+
+    @Override
+    void showLevelMessage() {
+        System.out.println("초급자 레벨 입니다.");
+    }
+}
+
+
