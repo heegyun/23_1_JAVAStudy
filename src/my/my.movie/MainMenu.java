@@ -3,7 +3,7 @@ package moviereservation;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MainMenu extends AbstractMenu {
+class MainMenu extends AbstractMenu {
     private static final MainMenu instance = new MainMenu(null);
     private static final String MAIN_MENU_TEXT = // 기본 문구
             "1: 영화 예매하기\n" +
@@ -14,55 +14,33 @@ public class MainMenu extends AbstractMenu {
                     "메뉴를 선택하세요: ";
 
     private MainMenu(Menu prevMenu) {
-        super(MAIN_MENU_TEXT, prevMenu);
+        super(MAIN_MENU_TEXT, prevMenu); // 부모 생성자 호출
     }
 
     public static MainMenu getInstance() {
         return instance; // 메뉴 객체 반환
     }
 
-
-    private void checkReservation() {
-        System.out.print("발급번호를 입력하세요: ");
-
-    }
-
-    private void cancelReservation() {
-        System.out.print("발급번호를 입력하세요: ");
-        try {
-
-        } catch (Exception e) {
-            System.out.println(">> 파일 입출력에 문제가 생겼습니다.");
-        }
-    }
-
-    private void reserve() {
-        try {
-
-        } catch (Exception e) {
-            System.out.println(">> 파일 입출력에 문제가 생겼습니다..");
-        }
-    }
-
-
-    @Override
-    public Menu next() { // 사용자 입력을  행 단위로 가져옴
+    public Menu next() {
         switch (scanner.nextLine()) {
-            // 관리자 비밀번호 확인 코드를 추가하기
-            // 만약 일치하면 메인 메뉴를 이전 메뉴로 등록 하고,
-            // 관리자 메뉴 객체를 반환
-            // 그렇지 않으면, >>비밀번호가 틀렸습니다. 메세지 출력 후, 메인메뉴(자기자신) 반환
-
-            case "q":
-                return prevMenu; //q입력시 메인 메뉴(this)로 돌아감
-            default:
-                return this; // 그 외 입력은 메인 메뉴(this)로 돌아감
+            case "1":
+                reserve(); // 영화 예매를 진행
+                return this; // 메인 메뉴 객체 반환(다시 메인 메뉴가 나옴)
+            case "2":
+                checkReservation(); // 예매 확인
+                return this; // 메인 메뉴 객체 반환(다시 메인 메뉴가 나옴)
+            case "3":
+                cancelReservation(); // 예매 취소
+                return this; // 메인 메뉴 객체 반환(다시 메인 메뉴가 나옴)
+            case "4":
+                if (!checkAdminPassword()) { // 관리자 비밀번호 확인
+                    System.out.println(">> 비밀번호가 틀렸습니다.");
+                    return this; // 실패한 경우 메인 메뉴 객체 반환
+                }
+                AdminMenu adminMenu = AdminMenu.getInstance();
+                adminMenu.setPrevMenu(this); // 메인 메뉴를 이전 메뉴로 등록
+                return adminMenu;
+            case "q": return prevMenu; // q 입력 시, prevMenu를 반환
+            default: return this; // 그 외 입력은 메인 메뉴(this)로 돌아감
         }
-
     }
-
-    private boolean checkAdminPassword() {
-        System.out.print("관리자 비밀번호를 입력하세요: ");
-        return "admin1234".equals(scanner.nextLine());
-    }
-}
