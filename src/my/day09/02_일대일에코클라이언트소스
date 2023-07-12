@@ -1,0 +1,9 @@
+/*
+ 포트 5000 번의 서버와 연결하기
+*/
+public class EchoClient {
+    public static void main(String[] args) throws IOException {
+        Socket client = null;
+        PrintWriter out = null;
+
+}
