@@ -1,0 +1,11 @@
+/*
+ 에코 서버구현: 클라이언트가 보낸 메세지에 따라  응답이 정해져 있는 서버
+  포트번호: 5000
+*/
+
+public class Echo1Server {
+    public static void main(String[] args) throws IOException {
+        ServerSocket server = null;
+        Socket connection = null;
+        BufferedReader in = null;
+}
