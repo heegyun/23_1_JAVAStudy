@@ -19,10 +19,12 @@ public class Echo2Server extends Thread {
         server.close();
     }
 
- // 인자 생성자...인자로 새로 연결된 소켓 객체를 전달 받아 서버 연결 객체로 초기화한다.
-   private Echo2Server(Socket clientSocket) {
-        connection = clientSocket;
-        start();
+ // 인자 생성자...
+   private Echo2Server(Socket clientSocket) { 
+        //인자로 새로 연결된 소켓 객체를 전달 받아 서버 연결 객체로 초기화한다.
+        
+        // 스레드 실행
+        
     }
 // 스레드 메소드 run() 재정의하기
  public void run() {
