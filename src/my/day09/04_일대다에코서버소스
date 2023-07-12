@@ -12,10 +12,8 @@ public class Echo2Server extends Thread {
         server = new ServerSocket(5000);
         System.out.println("서버 소켓 생성");
 
-        while (cont) {
-            System.out.println("연결 대기 중.....");
-            new Echo2Server(server.accept());
-        }
+       // 여기에 코드 추가 
+         
         server.close();
     }
 
