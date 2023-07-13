@@ -1,7 +1,6 @@
-package javabook.ch10;
 
 // 상품정보 테이블 데이터 표현을 위한 클래스
-public class Product {
+public class ProductDTO {
 	
 	// 컬럼정보에 따른 필드 선언
 	private int prcode;
