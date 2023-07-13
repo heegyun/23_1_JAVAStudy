@@ -3,8 +3,8 @@ import java.util.*;
 
 public class EventRegist {
 	Scanner scanner = new Scanner(System.in);
-	String jdbcDriver = "com.mysql.jdbc.Driver";
-	String jdbcUrl = "jdbc:mysql://localhost/javadb";
+	String jdbcDriver = "";
+	String jdbcUrl = "";
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
@@ -30,7 +30,7 @@ public class EventRegist {
 			Class.forName(jdbcDriver);
 			
 			// 2단계: 데이터베이스 연결
-			conn = DriverManager.getConnection(jdbcUrl,"javabook","1234");
+			conn = DriverManager.getConnection(jdbcUrl,"root","1234");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
