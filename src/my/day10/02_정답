@@ -3,8 +3,8 @@ import java.util.*;
 
 public class EventRegist {
 	Scanner scanner = new Scanner(System.in);
-	String jdbcDriver = "";
-	String jdbcUrl = "";
+	String jdbcDriver = "jdbc:mysql://localhost/contacts?serverTimezone=Asia/Seoul";
+	String jdbcUrl = "jdbc:mysql://localhost/contacts?serverTimezone=Asia/Seoul";
 	Connection conn;
 	PreparedStatement pstmt;
 	ResultSet rs;
