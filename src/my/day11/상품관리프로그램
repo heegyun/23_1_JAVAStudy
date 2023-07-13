@@ -7,3 +7,14 @@
 2) ProductDTO                Data Object
 3) ProductDAO                Data Access Object
 -----------------------------------------------------------
+
+- 각 클래스를 패키지로구분하여 저장하기
+- 테이블은 ProductDTO와 동일한 구조이다.
+
+----------------------------------------------------
+테이블 명: product
+필드명1: pcode int(11) not null auto_increment primary key
+필드명2: prname varchar(45) not null
+필드명3: price int(11) not null 
+필드명4: manufacture varchar(20) not null
+-------------------------------------------------------------
