@@ -1,0 +1,31 @@
+// 뼈대 코드
+public class EventRegist {
+	Scanner scanner = new Scanner(System.in);
+	
+	String jdbcDriver = "com.mysql.jdbc.Driver";
+	String jdbcUrl = "jdbc:mysql://localhost/javadb";
+	Connection conn;
+	
+	PreparedStatement pstmt;
+	ResultSet rs;
+
+   // 생성자 메서드
+	public EventRegist() {
+		System.out.println("## 이벤트 등록을 위해 이름과 이메일을 입력하세요");
+		System.out.print("이름: ");
+		String uname = scanner.next();
+		System.out.print("이메일: ");
+		String email = scanner.next();
+
+  // DB 연결 메소드 호출 
+		connectDB();
+	// 등록 메소드 호출
+    registUser(uname,email);
+	
+   // 등록자명단 출력 메소드 호출 
+    printList();
+
+   // 데이터베이스 연결 해제
+		closeDB();
+	}
+}
