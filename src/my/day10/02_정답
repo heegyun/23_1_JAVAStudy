@@ -3,7 +3,7 @@ import java.util.*;
 
 public class EventRegist {
 	Scanner scanner = new Scanner(System.in);
-	String jdbcDriver = "jdbc:mysql://localhost/contacts?serverTimezone=Asia/Seoul";
+	String jdbcDriver = "com.mysql.cj.jdbc.Driver";
 	String jdbcUrl = "jdbc:mysql://localhost/contacts?serverTimezone=Asia/Seoul";
 	Connection conn;
 	PreparedStatement pstmt;
