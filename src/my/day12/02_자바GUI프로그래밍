@@ -15,5 +15,18 @@
 6. JavaFX는 Visual Layout Tool과 css 파일의 지원으로 더욱 편리하게 UI 스타일을 재정의할 수 있고, 프로그램도 간결하게 유지할 수 있다
   - JavaFX public API: 다양한 사용자 애플리케이션을 제작할 수 있도록 자유도와 유연성을 제공하며 자바 플랫폼에 기반을 둔다.
 
+7. 이벤트 핸들링
+  - 이벤트는  GUI 프로그램에서 발생하는 특정 시점의 의미있는 신호를 말하며 마우스나 키보드 입력과 같이 사용자가 입력한 결과를 응용 프로그램에 전달하면선 발생한다
+  - 이벤트 종류
+    1) ActionEvent
+    2) MouseEvent
+    3) MouseWheelEvent
+    4) KeyEvent
+    5) ComponentEvent
+    6) ContainerEvent
+    7) ItemEvent
+
+
+
 
 
