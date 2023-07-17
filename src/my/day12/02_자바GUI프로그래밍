@@ -18,13 +18,13 @@
 7. 이벤트 핸들링
   - 이벤트는  GUI 프로그램에서 발생하는 특정 시점의 의미있는 신호를 말하며 마우스나 키보드 입력과 같이 사용자가 입력한 결과를 응용 프로그램에 전달하면선 발생한다
   - 이벤트 종류
-    1) ActionEvent
-    2) MouseEvent
-    3) MouseWheelEvent
-    4) KeyEvent
-    5) ComponentEvent
-    6) ContainerEvent
-    7) ItemEvent
+    1) ActionEvent   -------------- addActionListener 메소드로 등록하며,   -----------------   ActionListener에 이벤트를 넘긴다.
+    2) MouseEvent     -------------- addMouseListener 메소드로 등록하며,   -----------------   MouseListener, MouseAdapterListener에 이벤트를 넘긴다.
+    3) MouseWheelEvent ------------- addMouseWheelListener 메소드로 등록하며,  -----------------   MouseWheelListener에 이벤트를 넘긴다.
+    4) KeyEvent        ------------- addKeyListener 메소드로 등록하며,   ----------------- ------  KeyListener에 이벤트를 넘긴다.
+    5) ComponentEvent  ------------- addComponentListener 메소드로 등록하며,   -----------------   ComponentListener에 이벤트를 넘긴다.
+    6) ContainerEvent  ------------- addContainerListener 메소드로 등록하며,   -----------------   ContainerListener에 이벤트를 넘긴다.
+    7) ItemEvent       ------------- addItemListener 메소드로 등록하며,   ----------------------   ItemListener에 이벤트를 넘긴다.
 
 
 
