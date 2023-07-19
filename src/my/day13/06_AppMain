@@ -30,8 +30,8 @@ public class AppMain extends JFrame implements ActionListener{
 	JButton b2 = new JButton("조회");
 	JButton b3 = new JButton("삭제");
 
-   // 비즈니스 로직 객체 재사용 -----------------
-  // 1. 데이터베이스 연동 클래스(DAO) 인스턴스 생성
+   	// 비즈니스 로직 객체 재사용 -----------------
+ 	 // 1. 데이터베이스 연동 클래스(DAO) 인스턴스 생성
 		
 	// 2. 상품정보 객체 인스턴스 선언
 	
@@ -45,7 +45,7 @@ public class AppMain extends JFrame implements ActionListener{
 		ml.setText(msg+" 프로그램이 시작 되었습니다.!!");
 		ml.setEnabled(false);
 
-  // 양식 배치를 위한 패널 레이아웃 설정
+ 		 // 양식 배치를 위한 패널 레이아웃 설정
 		p1.setLayout(new GridLayout(4,1,20,2));
 		p2.setLayout(new GridLayout(4,1,20,2));
 		
@@ -98,9 +98,9 @@ public class AppMain extends JFrame implements ActionListener{
 		clearField();
 		editmode=false;
 		
-    ta.append("관리번호\t상품명\t\t단가\t제조사\n");
+    		ta.append("관리번호\t상품명\t\t단가\t제조사\n");
 
-	  // 5. 비즈니스 로직 메소드 호출(전체조회 메소드)
+	  	// 5. 비즈니스 로직 메소드 호출(전체조회 메소드)
     
 		
 		// 데이터변경시 콤보박스 데이터 갱신
@@ -141,14 +141,17 @@ public class AppMain extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
     	Object obj = e.getSource();
     	// 등록 버튼인 경우, 등록과 수정을 겸해서 처리함.
-    	if(obj == b1) {
-    		product = new ProductDTO();
-    		product.setPrname(t1.getText());
+	// 6. 등록버튼과 같은 경우라면...
+    	if() {
+		// 7. ProductDTO 객체 생성...
+    		
+    		// setter 메소드 호출하여 멤버변수값 초기화 또는 인자 생성자 호출...해도 됨
+		product.setPrname(t1.getText());
     		product.setPrice(Integer.parseInt(t2.getText()));
     		product.setManufacture(t3.getText());
     		
-    		// 수정인 경우
-    		if(editmode == true) {
+    		
+    		if(editmode == true) { // 수정후에도 등록 버튼이 눌려진걸 처리함
     			product.setPrcode(Integer.parseInt((String)cb.getSelectedItem()));
     			if(dao.updateProduct(product)) {
     	   			ml.setText(msg+"상품을 수정했습니다.!!");
@@ -169,8 +172,8 @@ public class AppMain extends JFrame implements ActionListener{
         	// 화면 데이터 갱신
         	refreshData();
     	}
-    	// 조회 버튼인 경우
-    	else if(obj == b2) {
+    	// 8. 조회 버튼인 경우
+    	else if() { 
     		String s = (String)cb.getSelectedItem();
     		if(!s.equals("전체")) {
         		product = dao.getProduct(Integer.parseInt(s));
@@ -191,8 +194,8 @@ public class AppMain extends JFrame implements ActionListener{
 	        	refreshData();
     		}
     	}
-    	// 삭제 버튼인 경우
-    	else if(obj == b3) {
+    	// 9. 삭제 버튼인 경우
+    	else if() {
     		String s = (String)cb.getSelectedItem();
     		if(s.equals("전체")) {
      			ml.setText(msg+"전체 삭제는 되지 않습니다.!!");    			
